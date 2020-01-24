@@ -1,0 +1,8 @@
+{
+  "tickDelay": 1500,
+  "xRes": 800,
+  "yRes": 600,
+  "lastEmail": "",
+  "lastChannel": "lewdmelon",
+  "prefix": "!"
+}

@@ -1,0 +1,5 @@
+C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\bin\Debug\BotAPI.dll
+C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\bin\Debug\BotAPI.pdb
+C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.csprojAssemblyReference.cache
+C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.dll
+C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.pdb

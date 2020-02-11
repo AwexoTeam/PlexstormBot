@@ -46,6 +46,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "DisplayWindow";
             this.Text = "DisplayWindow";
+            this.Load += new System.EventHandler(this.DisplayWindow_Load);
             this.ResumeLayout(false);
 
         }

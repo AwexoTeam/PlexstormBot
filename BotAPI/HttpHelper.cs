@@ -12,20 +12,29 @@ namespace BotAPI
     {
         public static string Get(string uri)
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
+            try
             {
-                return reader.ReadToEnd();
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("FAILED ON URI: " + uri);
+                Debug.LogError(e.Message);
+                throw;
             }
         }
 
-        public static string Post(string uri, string data, string contentType, string method = "POST")
+        public static string Post(string uri, string data, string contentType, string header, string method = "POST")
         {
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
 
@@ -35,17 +44,32 @@ namespace BotAPI
             request.ContentType = contentType;
             request.Method = method;
 
-            using (Stream requestBody = request.GetRequestStream())
+            if (header.ToLower().Contains("accept"))
             {
-                requestBody.Write(dataBytes, 0, dataBytes.Length);
-            }
+                request.Accept = header;
+                
+                using (Stream requestBody = request.GetRequestStream())
+                {
+                    requestBody.Write(dataBytes, 0, dataBytes.Length);
+                }
 
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
+                try
+                {
+                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                    using (Stream stream = response.GetResponseStream())
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("HTTP problem");
+                    Debug.LogError(e.Message);
+                    return string.Empty;
+                }
             }
+            else { return string.Empty; }
         }
     }
 }

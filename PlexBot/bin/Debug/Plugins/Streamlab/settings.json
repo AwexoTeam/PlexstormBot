@@ -1,0 +1,8 @@
+{
+  "useTipJar": false,
+  "useAlerts": true,
+  "useChannelPoints": true,
+  "useAutomaticMessages": true,
+  "useRoulette": true,
+  "helpMsgFile": "helpmsg.txt"
+}

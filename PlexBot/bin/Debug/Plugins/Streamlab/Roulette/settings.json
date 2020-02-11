@@ -1,0 +1,17 @@
+{
+  "rouletteTime": 30000,
+  "miniumBet": 100,
+  "betDivider": 10,
+  "payouts": null,
+  "greenPayout": 40,
+  "numberPayout": 36,
+  "oddPayout": 2,
+  "evenPayout": 2,
+  "redPayout": 2,
+  "blackPayout": 2,
+  "firstHalfPayout": 2,
+  "secondHalfPayout": 2,
+  "firstThirdPayout": 3,
+  "middleThirdPayout": 3,
+  "lastThirdPayout": 3
+}

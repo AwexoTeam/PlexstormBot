@@ -16,11 +16,13 @@ namespace BotAPI
         public static Dictionary<string, ICommandable> commands;
         public static List<string> moderators;
         private static string adminChannel;
-        public static void Initialize(string channel)
+        public static void Initialize(string channel, string basePath)
         {
+            Debug.Log("channel: " + channel);
+
             adminChannel = channel;
             moderators = new List<string>();
-
+            
             commands = new Dictionary<string, ICommandable>();
             Timer tick = new Timer();
             tick.Interval = 1000;
@@ -44,11 +46,12 @@ namespace BotAPI
             }
         }
 
-        public static void ProcessCommand(string user, string commandContext)
+        public static void ProcessCommand(ChatContext context, string commandContext)
         {
             string cmdHandle = "";
             string[] args = new string[] { "NONE" };
             bool haveArgs = false;
+            string user = context.name;
 
             if(commandContext.Contains(" "))
             {
@@ -68,17 +71,19 @@ namespace BotAPI
             if (commands.ContainsKey(cmdHandle))
             {
                 ICommandable cmd = commands[cmdHandle];
-
-                if (GetUserAuthLevel(user) >= cmd.authLevel)
+                AuthLevel authLevel = GetUserAuthLevel(user);
+                if (authLevel >= cmd.authLevel)
                 {
-                    if (haveArgs) { cmd.InvokeCommand(args); }
-                    else { cmd.InvokeCommand(); }
+
+
+                    if (haveArgs) { cmd.InvokeCommand(context, user, args); }
+                    else { cmd.InvokeCommand(context, user); }
 
                     OnCommandActivated?.Invoke(cmdHandle, args);
                 }
-                else { Console.WriteLine(user + " tried to use " + cmd.handle); }
+                else{ Debug.LogError(user + " tried to use " + cmd.handle + " as a(n) " + authLevel); }
             }
-            else { Console.WriteLine("Couldnt find command."); }
+            else { Debug.LogError("Couldnt find command."); }
         }
 
         public static bool AddCommand(ICommandable cmd)
@@ -86,7 +91,7 @@ namespace BotAPI
             bool rtn = false;
             if (commands.ContainsKey(cmd.handle))
             {
-                Console.WriteLine("There is already a defination for: " + cmd.handle);
+                Debug.LogWarning("There is already a defination for: " + cmd.handle);
                 rtn = false;
             }
             else

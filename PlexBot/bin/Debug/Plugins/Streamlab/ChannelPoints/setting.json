@@ -1,0 +1,6 @@
+{
+  "delay": 3000,
+  "reward": 10,
+  "maxCharReward": 500,
+  "procentDeviantion": 20
+}

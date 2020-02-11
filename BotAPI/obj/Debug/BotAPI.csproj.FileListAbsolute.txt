@@ -3,3 +3,8 @@ C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\bin\Debug
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.csprojAssemblyReference.cache
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.dll
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\BotAPI\obj\Debug\BotAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\BotAPI\bin\Debug\BotAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\BotAPI\bin\Debug\BotAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\BotAPI\obj\Debug\BotAPI.csprojAssemblyReference.cache
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\BotAPI\obj\Debug\BotAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\BotAPI\obj\Debug\BotAPI.pdb

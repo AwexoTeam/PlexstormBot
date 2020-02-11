@@ -48,7 +48,7 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(89, 32);
+            this.btnConnect.Location = new System.Drawing.Point(93, 98);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 0;
@@ -75,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 212);
+            this.label2.Location = new System.Drawing.Point(6, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             // emailTB
             // 
-            this.emailTB.Location = new System.Drawing.Point(95, 205);
+            this.emailTB.Location = new System.Drawing.Point(89, 32);
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(162, 20);
             this.emailTB.TabIndex = 4;
@@ -91,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 234);
+            this.label3.Location = new System.Drawing.Point(6, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 7;
@@ -99,7 +99,7 @@
             // 
             // passwordTB
             // 
-            this.passwordTB.Location = new System.Drawing.Point(95, 231);
+            this.passwordTB.Location = new System.Drawing.Point(89, 58);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.Size = new System.Drawing.Size(162, 20);
             this.passwordTB.TabIndex = 6;
@@ -155,7 +155,7 @@
             // 
             // testSubBtn
             // 
-            this.testSubBtn.Location = new System.Drawing.Point(8, 32);
+            this.testSubBtn.Location = new System.Drawing.Point(12, 98);
             this.testSubBtn.Name = "testSubBtn";
             this.testSubBtn.Size = new System.Drawing.Size(75, 23);
             this.testSubBtn.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             // testTipBTN
             // 
-            this.testTipBTN.Location = new System.Drawing.Point(176, 32);
+            this.testTipBTN.Location = new System.Drawing.Point(180, 98);
             this.testTipBTN.Name = "testTipBTN";
             this.testTipBTN.Size = new System.Drawing.Size(75, 23);
             this.testTipBTN.TabIndex = 14;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 65);
+            this.ClientSize = new System.Drawing.Size(270, 127);
             this.Controls.Add(this.testTipBTN);
             this.Controls.Add(this.testSubBtn);
             this.Controls.Add(this.testFollowBTN);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.channelTB);
             this.Controls.Add(this.btnConnect);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bot";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

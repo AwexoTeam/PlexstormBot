@@ -17,3 +17,10 @@ C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debu
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.dll
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.pdb
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.dll.config
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.dll.config
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\Plugins\DLLs\TestMod.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\TestMod\obj\Debug\TestMod.csprojAssemblyReference.cache
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\TestMod\obj\Debug\TestMod.csproj.CopyComplete
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\TestMod\obj\Debug\TestMod.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\TestMod\obj\Debug\TestMod.pdb

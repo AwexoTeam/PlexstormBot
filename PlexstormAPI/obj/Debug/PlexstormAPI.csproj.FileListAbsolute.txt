@@ -8,3 +8,15 @@ C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexstormAPI\obj
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexstormAPI\obj\Debug\PlexstormAPI.csproj.CopyComplete
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexstormAPI\obj\Debug\PlexstormAPI.dll
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexstormAPI\obj\Debug\PlexstormAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\PlexstormAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\PlexstormAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\websocket-sharp.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\websocket-sharp.xml
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\obj\Debug\PlexstormAPI.csprojAssemblyReference.cache
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\obj\Debug\PlexstormAPI.csproj.CopyComplete
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\obj\Debug\PlexstormAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\obj\Debug\PlexstormAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\BotAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexstormAPI\bin\Debug\BotAPI.pdb

@@ -45,7 +45,7 @@ namespace PlexBot
             needCleaning = true;
         }
 
-        public void UnqueueRender()
+        private void UnqueueRender()
         {
             if (displayQueue.Count > 0 && !isRendering)
             {
@@ -58,14 +58,6 @@ namespace PlexBot
         public void EnqueueRenders(RenderRequest request)
         {
             displayQueue.Enqueue(request);
-        }
-
-        public bool ControlInvokeRequired(Control c, Action a)
-        {
-            if (c.InvokeRequired) c.Invoke(new MethodInvoker(delegate { a(); }));
-            else return false;
-
-            return true;
         }
 
         private void widnowTick_Tick(object sender, EventArgs e)
@@ -85,6 +77,11 @@ namespace PlexBot
                 ctrl.Show();
                 ctrl.Refresh();
             }
+        }
+
+        private void DisplayWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,3 +22,27 @@ C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debu
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debug\BotAPI.dll
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\bin\Debug\BotAPI.pdb
 C:\Users\Melon\Documents\Visual Studio 2017\Projects\NewLewdBot\PlexBot\obj\Debug\PlexBot.DisplayWindow.resources
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\PlexBot.exe.config
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\PlexBot.exe
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\PlexBot.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\BotAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\PlexstormAPI.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\SocketIOClient.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\websocket-sharp.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\WebSocket4Net.dll
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\BotAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\PlexstormAPI.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\SocketIOClient.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\SocketIOClient.xml
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\websocket-sharp.xml
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\bin\Debug\WebSocket4Net.pdb
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.csprojAssemblyReference.cache
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.DisplayWindow.resources
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.Form1.resources
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.Properties.Resources.resources
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.csproj.GenerateResource.cache
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.csproj.CopyComplete
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.exe
+C:\Users\Melon\Documents\LBLMain\PlexstormBot\PlexBot\obj\Debug\PlexBot.pdb

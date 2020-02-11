@@ -1,0 +1,1 @@
+Use !redeem to check redeem list then you can use !redeem (item) to redeem that item! You can check your balance with !balance

@@ -2,7 +2,9 @@
 using PlexstormAPI.Core;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Authentication;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,19 +14,22 @@ using WebSocketSharp;
 
 namespace PlexstormAPI
 {
-
     public static class PlexAPI
     {
+
         private static string uri = "wss://websocket.plexstorm.com/socket.io/?EIO=3&transport=websocket";
         private static int digitsToCheck = 3;
         public static WebSocket ws;
 
         public static string channel;
+        public static string publicKey;
+        public static string clientToken;
 
-        public static bool Initialize(string _channel)
+        public static bool Initialize(string _channel, string _publicKey, string _clientToken)
         {
             channel = _channel;
-
+            publicKey = _publicKey;
+            clientToken = _clientToken;
             Timer pingTimer = new Timer();
 
             pingTimer = new System.Timers.Timer();
@@ -51,13 +56,13 @@ namespace PlexstormAPI
 
         private static void OnOpen(object sender, EventArgs e)
         {
-            Console.WriteLine("Connected");
-            ws.Send(GetSubString());
+            BotAPI.Debug.Log("Connected");
+            ws.Send(GetSubString(channel, clientToken));
         }
 
-        private static void OnError(object sender, ErrorEventArgs e)
+        private static void OnError(object sender, WebSocketSharp.ErrorEventArgs e)
         {
-            Console.WriteLine("ERR: " + e.Exception);
+            BotAPI.Debug.LogError("ERR: " + e.Exception);
         }
 
         private static void OnMessage(object sender, MessageEventArgs e)
@@ -95,21 +100,58 @@ namespace PlexstormAPI
                         }
                     }
                 }
-                else { Console.WriteLine("Str is not num"); }
+                else { BotAPI.Debug.Log("Str is not num"); }
             }
         }
 
-        private static string GetSubString()
+        private static string GetSubString(string channel, string token)
         {
-            string replaceStr = '"'.ToString();
+            string baseStr = "42[*subscribe*,{*channel*:*channel.<channelname>*,*auth*:{*headers*:{*Authorization*:*Bearer <token>*}}}]";
 
-            string baseStr = "42[{0}subscribe{0},{{0}channel{0}:{0}channel.{1}{0},{0}auth{0}:{{0}headers{0}:{{0}Authorization{0}:null}}}]";
-            string rtn = baseStr.Replace("{0}", replaceStr);
-            rtn = rtn.Replace("{1}", channel);
+            baseStr = baseStr.Replace("<channelname>", channel);
+            baseStr = baseStr.Replace("<token>", token);
+            baseStr = baseStr.Replace('*', '"');
 
-            return rtn;
+            return baseStr;
         }
 
-        public static void Log(string str) { Console.WriteLine(str); }
+        public static void WriteInChat(string message)
+        {
+            //string uri = "https://test.wikiop.in/postie.php";
+            string uri = "https://api.plexstorm.com/api/channels/" + channel + "/messages";
+
+            string content = "application/json;charset=utf-8";
+            string data = "{" + '"' + "message" + '"' + ":" + '"' + message + '"' + "}";
+
+            byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+            request.ContentLength = dataBytes.Length;
+            request.ContentType = content;
+            request.Method = "POST";
+            request.Headers[HttpRequestHeader.Authorization] = "Bearer " + clientToken;
+
+            using (Stream requestBody = request.GetRequestStream())
+            {
+                requestBody.Write(dataBytes, 0, dataBytes.Length);
+            }
+
+            try
+            {
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    //Console.WriteLine(reader.ReadToEnd());
+                }
+            }
+            catch (Exception e)
+            {
+                BotAPI.Debug.LogError("HTTP problem");
+                BotAPI.Debug.LogError(e.Message);
+                //return string.Empty;
+            }
+        }
     }
 }

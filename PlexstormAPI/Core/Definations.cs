@@ -35,42 +35,45 @@ namespace PlexstormAPI.Core
             id = (int)rss["data"]["message"]["id"];
             content = (string)rss["data"]["message"]["content"];
             type = (string)rss["data"]["message"]["type"];
-            name = (string)rss["data"]["message"]["user"]["name"];
-
-            if (name != string.Empty && name != "null")
+            if (type != "system")
             {
-                hexColor = (string)rss["data"]["message"]["user"]["color"];
-                avatar = (string)rss["data"]["message"]["user"]["avatar"];
+                name = (string)rss["data"]["message"]["user"]["name"];
 
-                slug = (string)rss["data"]["message"]["user"]["slug"];
-                gender = (string)rss["data"]["message"]["user"]["gender"];
-                isTrans = (bool)rss["data"]["message"]["user"]["is_trans"];
-                level = (int)rss["data"]["message"]["user"]["level"];
-                isPremium = (bool)rss["data"]["message"]["user"]["is_premium"];
+                if (name != string.Empty && name != "null" && name != "system")
+                {
+                    hexColor = (string)rss["data"]["message"]["user"]["color"];
+                    avatar = (string)rss["data"]["message"]["user"]["avatar"];
 
-            }
-            else
-            {
-                hexColor = "#FFCCFF";
-                avatar = "";
-                slug = "";
-                gender = "non-defined";
-                isTrans = false;
-                level = -1;
-                isPremium = false;
-                isTip = false;
-                credit = 0;
-            }
+                    slug = (string)rss["data"]["message"]["user"]["slug"];
+                    gender = (string)rss["data"]["message"]["user"]["gender"];
+                    isTrans = (bool)rss["data"]["message"]["user"]["is_trans"];
+                    level = (int)rss["data"]["message"]["user"]["level"];
+                    isPremium = (bool)rss["data"]["message"]["user"]["is_premium"];
 
-            string creditStr = (string)rss["data"]["message"]["credits"];
-            if(!int.TryParse(creditStr, out credit))
-            {
-                credit = 0;
-                isTip = false;
-            }
-            else
-            {
-                isTip = credit > 0;
+                }
+                else
+                {
+                    hexColor = "#FFCCFF";
+                    avatar = "";
+                    slug = "";
+                    gender = "non-defined";
+                    isTrans = false;
+                    level = -1;
+                    isPremium = false;
+                    isTip = false;
+                    credit = 0;
+                }
+
+                string creditStr = (string)rss["data"]["message"]["credits"];
+                if (!int.TryParse(creditStr, out credit))
+                {
+                    credit = 0;
+                    isTip = false;
+                }
+                else
+                {
+                    isTip = credit > 0;
+                }
             }
         }
     }

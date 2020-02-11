@@ -56,5 +56,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BotAPI\BotAPI.csproj">
+      <Project>{64e0e8b6-8ab5-4140-aba7-7569be6fce62}</Project>
+      <Name>BotAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,2 +1,3 @@
 ﻿Raid command,
 Follow, tip, subscription notification
+load tips from json.

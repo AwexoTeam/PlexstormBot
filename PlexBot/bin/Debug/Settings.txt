@@ -1,8 +1,9 @@
 {
+  "publicKey": "tJ1Ng4AoDwnecJ1zknyX0cDd3BaxWAKR10s7YKnw",
   "tickDelay": 1500,
   "xRes": 800,
   "yRes": 600,
-  "lastEmail": "",
+  "lastEmail": "spil778@gmail.com",
   "lastChannel": "lewdmelon",
   "prefix": "!"
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -21,13 +22,16 @@ namespace PlexBot.Definations
             lastChannel = "";
             tickDelay = 1500;
             prefix = '!';
+            publicKey = "tJ1Ng4AoDwnecJ1zknyX0cDd3BaxWAKR10s7YKnw";
         }
+        public string publicKey { get; set; }
         public int tickDelay { get; set; }
         public int xRes { get; set; }
         public int yRes { get; set; }
         public string lastEmail { get; set; }
         public string lastChannel { get; set; }
         public char prefix { get; set; }
+
     }
 
     public interface IRenderable
@@ -96,7 +100,6 @@ namespace PlexBot.Definations
         private PictureBox pictureBox;
         public void Render(DisplayWindow window)
         {
-            Console.WriteLine("Rendering image");
             targetWindow = window;
 
             pictureBox = new PictureBox();
@@ -111,7 +114,10 @@ namespace PlexBot.Definations
 
         public void SetFromFile(string file)
         {
-            image = Image.FromFile(file);
+            if (File.Exists(file))
+                image = Image.FromFile(file);
+            else
+                BotAPI.Debug.LogError("Couldnt find file: " + file);
         }
     }
 
@@ -127,6 +133,11 @@ namespace PlexBot.Definations
 
         private DisplayWindow targetWindow;
         private Label textLabel;
+        private Color color;
+        public void SetColor(int r, int g, int b)
+        {
+            color = Color.FromArgb(r, g, b);
+        }
 
         public void Render(DisplayWindow window)
         {
@@ -138,6 +149,7 @@ namespace PlexBot.Definations
             textLabel.Height = height;
             textLabel.Text = text;
             textLabel.Font = new Font("Ariel", 10);
+            textLabel.ForeColor = color; 
 
             if (autoResize)
                 SizeLabelFont(textLabel);
@@ -196,8 +208,15 @@ namespace PlexBot.Definations
         {
             if (file != string.Empty)
             {
-                SoundPlayer notificationSound = new SoundPlayer(file);
-                notificationSound.Play();
+                if (File.Exists(file))
+                {
+                    SoundPlayer notificationSound = new SoundPlayer(file);
+                    notificationSound.Play();
+                }
+                else
+                {
+                    BotAPI.Debug.LogError("Couldnt find file: " + file);
+                }
             }
         }
     }

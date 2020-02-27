@@ -34,6 +34,7 @@ namespace PlexstormAPI.Core
             string json = jsonStr.Substring(index, jsonStr.Length - index - 1);
 
             JObject rss = JObject.Parse(json);
+
             string rssTitle = (string)rss["data"]["message"]["content"];
 
             ChatMessage msg = new ChatMessage(rss);
